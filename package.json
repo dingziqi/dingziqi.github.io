@@ -1,0 +1,25 @@
+{
+  "name": "dingziqi.github.io",
+  "version": "1.0.0",
+  "private": false,
+  "description": "homepage",
+  "author": "dingziqi<dingziqi_xtu@sina.com>",
+  "keywords": [
+    "blog"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build && gh-pages -d public -b main",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.10.2",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gh-pages": "^3.2.3",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
