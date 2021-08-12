@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdingziqi_github_io=self.webpackChunkdingziqi_github_io||[]).push([[678],{591:function(e,n,i){i.r(n),i.d(n,{default:function(){return r}});var t=i(294),u=function(e){var n=e.children;return t.createElement("div",null,n)},r=function(){return t.createElement(u,null,t.createElement("div",{className:"index-module--container--1TK4P"},"Comming Soon..."))}}}]);
-//# sourceMappingURL=component---src-pages-index-js-dbabe996f7ea24f39bcd.js.map
