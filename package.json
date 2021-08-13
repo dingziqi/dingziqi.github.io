@@ -50,7 +50,7 @@
     "url": "git+https://github.com/dingziqi/compatible-issues.git"
   },
   "scripts": {
-    "build": "gatsby build --prefix-paths && gh-pages -d public -b pages",
+    "build": "gatsby build --prefix-paths && gh-pages -d public -b main",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
