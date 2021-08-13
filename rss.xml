@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.Z]]></title><description><![CDATA[个人博客]]></description><link>https://dingziqi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Aug 2021 09:12:42 GMT</lastBuildDate><item><title><![CDATA[window下几种以当前路径打开命令行的方式]]></title><description><![CDATA[此技巧仅用于 window 平台，osx 用户绕道。 方法一 最原始的方法，手动调出 cmd，然后通过命令切换到指定目录。 方法二 用资源管理器打开指定目录后，在资源管理器的地址栏里输入 cmd…]]></description><link>https://dingziqi.github.io/window下几种以当前路径打开命令行的方式/</link><guid isPermaLink="false">https://dingziqi.github.io/window下几种以当前路径打开命令行的方式/</guid><pubDate>Mon, 13 Jun 2016 12:01:05 GMT</pubDate><content:encoded>&lt;p&gt;此技巧仅用于 window 平台，osx 用户绕道。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[D.Z]]></title><description><![CDATA[个人博客]]></description><link>https://dingziqi.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 13 Aug 2021 09:44:55 GMT</lastBuildDate><item><title><![CDATA[详解 webpack devtool 配置]]></title><description><![CDATA[什么是 sourceMap？ sourceMap 是一类用于描述文件压缩混淆前后内容映射的文件，它以 .map 为后缀名，内容为一个 JavaScript 对象。 sourceMap…]]></description><link>https://dingziqi.github.io/详解webpack-dev-tool配置/</link><guid isPermaLink="false">https://dingziqi.github.io/详解webpack-dev-tool配置/</guid><pubDate>Fri, 17 May 2019 19:41:52 GMT</pubDate><content:encoded>&lt;h1&gt;什么是 sourceMap？&lt;/h1&gt;
+&lt;p&gt;sourceMap 是一类用于描述文件压缩混淆前后内容映射的文件，它以 .map 为后缀名，内容为一个 JavaScript 对象。&lt;/p&gt;
+&lt;p&gt;sourceMap 的产生是由于现在前端开发过程中为了节省带宽，通常会对源码文件进行压缩和混淆，这就导致我们在浏览器中 debug 代码时面对的是压缩和混淆后的代码。所以浏览器提供了一项 souceMap 能力，通过 map 文件来描述压缩文件和原始文件间内容的映射，这样我们在 source 面板下可以对原始文件进行打点调试。&lt;/p&gt;
+&lt;p&gt;souceMap 并不仅限于 js 文件，css 也支持 sourceMap。&lt;/p&gt;
+&lt;h1&gt;webpack 中的 sourceMap&lt;/h1&gt;
+&lt;p&gt;我们以 webpack@4 为例，我们可以通过 devTool 配置来控制如何生成 sourceMap。webpack 提供了很多种方式：source-map、cheap-source-map 等等。总的来说可以根据功能分类成以下几种：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;eval：源码以字符的形式被 eval(…) 来调用，不会生成 sourceMap 信息，只会通过一个 sourceURL 来存储原始文件的位置。&lt;/li&gt;
+&lt;li&gt;source-map：会生成 sourceMap 信息，默认会输出到一个 .map 文件中，且源码中会通过 sourceMappingURL 来指定对应 map 文件位置。&lt;/li&gt;
+&lt;li&gt;cheap：生成的 sourceMap 信息不包含列信息。&lt;/li&gt;
+&lt;li&gt;module：生成的 sourceMap 信息还包含 loader 处理前后的映射信息，比如源码是 jsx，如果没有使用含 module 的 sourceMap，则只能解析回 js 形式，使用了含 module 的则可以解析回 jsx。&lt;/li&gt;
+&lt;li&gt;inline: map 信息以 DataURI 的方式存放在源码文件中。
+具体各种值的打包效果可以参见参考 1。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;踩坑&lt;/h1&gt;
+&lt;p&gt;使用了 react-hot-loader 需要使用 cheap-module-eval-source-map sourceMap 的行号映射才正确。&lt;/p&gt;
+&lt;p&gt;#参考&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;webpack 支持的各种 sourceMap 类型&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[JavaScript代码检查及与gulp、git的结合使用]]></title><description><![CDATA[在团队开发过程中，我们可能会要浪费一些时间在代码检查上，譬如拼写的检查、代码规范的检查。作为码农，我们当然不能把自己的时间浪费这种无意义的事情上，所以本篇我将介绍一些自动化代码检查的东西和项目实际上的应用。 JSHint 安装及使用 JSHint是一个用于 JavaScript…]]></description><link>https://dingziqi.github.io/JavaScript代码检查及与gulp、git的结合使用/</link><guid isPermaLink="false">https://dingziqi.github.io/JavaScript代码检查及与gulp、git的结合使用/</guid><pubDate>Sat, 16 Jul 2016 14:55:14 GMT</pubDate><content:encoded>&lt;p&gt;在团队开发过程中，我们可能会要浪费一些时间在代码检查上，譬如拼写的检查、代码规范的检查。作为码农，我们当然不能把自己的时间浪费这种无意义的事情上，所以本篇我将介绍一些自动化代码检查的东西和项目实际上的应用。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;h3&gt;JSHint&lt;/h3&gt;
+&lt;h4&gt;安装及使用&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;http://jshint.com/&quot;&gt;JSHint&lt;/a&gt;是一个用于 JavaScript 代码静态检查的一些开源项目。他是运行与 node 环境，可以对我们指定的 JavaScript 文件进行一些静态的语法分析，譬如：变量定义、拼写检查、代码风格的检查等，而且检查项是灵活可配置的，可以针对不同项目的要求配置相应的检查项。JSHint 使用方式有多种，他可以通过命令行、node_module、集成到 IDE 这些方式来执行。在 IDE 中主要是通过插件的形式来使用，大家在自己顺手的 IDE 上搜&lt;code class=&quot;language-text&quot;&gt;JSHint&lt;/code&gt;的插件来使用，接下来我主要讲一下在命令行中使用和以 node_module 结合 gulp 使用。&lt;/p&gt;
+&lt;p&gt;我们可以通过&lt;code class=&quot;language-text&quot;&gt;npm&lt;/code&gt;安装 JSHint。这里需要注意的一些问题，如果我们全局安装 JSHint 他是包含了 CLI 和 JavaScript module 的，如果是本地安装则只包含 JavaScript module。&lt;em&gt;关于 node 中 CLI 和 JavaScript module 分别是怎么用的我后续再填坑，有兴趣的可以自己去了解先。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;因为我这里要测试命令行中使用，所以我们全局安装。然后就可以通过&lt;code class=&quot;language-text&quot;&gt;jshint filename&lt;/code&gt;来对制定的文件进行检查了。
+rem 全局安装
+npm i jshint -g&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;rem 本地安装
+npm i jshint&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;配置&lt;/h4&gt;
+&lt;p&gt;前面我们已经知道如何对我们指定的文件进行检查了，但是他检查的规则是什么呢？JSHint 会去解析一个&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件来确定如何检查，这个文件是个&lt;code class=&quot;language-text&quot;&gt;json&lt;/code&gt;格式的配置文件，我们可以配置一些制定项来定制我们的检查计划。里面具体的配置选项可以上官网上查找。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;undef&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这里需要注意的是 JSHint 查找这个&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件规则，会有多种情况：我们可以在我们命令后加上&lt;code class=&quot;language-text&quot;&gt;--config filename&lt;/code&gt;来执行读取对应配置文件进行检查。另外，我们可以在项目中&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;文件的&lt;code class=&quot;language-text&quot;&gt;jshintConfig&lt;/code&gt;来配置我们的&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件路径。如果上面两种都没有配置的话，则是会按 JShint 默认的规则来查找配置文件：JSHint 会在当前目录查找是否有&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件，如果没有找到则向文件夹上一层查找，一直到查到&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件或者根目录为止。如果没有指定&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件，JSHint 是不会对文件就行检查的。&lt;/p&gt;
+&lt;p&gt;除了上面这种将检查项配置在&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件的方式外，我们还可以直接以注释的形式将我们的检查配置写在我们的文件中。如下，如果我们的文件中有这样的注释，我们对该文件进行检查就会对未定义的变量进行检查。我们在代码文件中增加 jshint 配置并不会终止查找&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;文件读取配置的流程，只是如果代码文件中和&lt;code class=&quot;language-text&quot;&gt;.jshintrc&lt;/code&gt;有相同的配置时代码文件中的配置会更高。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* jshint undef: true */&lt;/span&gt;
+
+your code&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果我们在项目中有些文件来自第三方，这些文件不要求尊求我们的规范，我们就需要将这些文件排除在我们的检查列表之外，这时我们就需要另外一个配置文件&lt;code class=&quot;language-text&quot;&gt;.jshintignore&lt;/code&gt;。这个文件主要用于配置哪些文件不用于 JSHint 的检查，里面可以放具体的文件名或者文件夹名（该目录下都不被检查）。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;node_module
+app/test.js&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;gulp-jshint&lt;/h3&gt;
+&lt;p&gt;在项目中我们肯定不会用命令挨个检查文件是否符合规范，所以我们通常会配合&lt;code class=&quot;language-text&quot;&gt;gulp&lt;/code&gt;这类自动化工具来做这些重复的事情。由于 gulp 是基于“流”的形式来处理的，所以我们无法直接使用 JSHint，我们需要安转一个&lt;code class=&quot;language-text&quot;&gt;gulp-jshint&lt;/code&gt;，然后就可以在我们的 gulp 任务中加入 JSHint 的检查了。下面我们罗列一个简单的使用 JSHint 检查 app 路径下所有 JS 文件的示例代码。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; gulp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;gulp&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; JSHint &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;gulp-jshint&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+gulp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;checkCode&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; gulp
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;./app/**/*.js&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSHint&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;JSHint&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;reporter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;default&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;JSHint 检查的结果是通过命令行输出的，我们可以使用&lt;code class=&quot;language-text&quot;&gt;.pipe(JSHint.reporter(&apos;default&apos;))&lt;/code&gt;来使用默认的样式输出检查结果，为了增强可读性，我们通常还会使用&lt;code class=&quot;language-text&quot;&gt;jshint-stylish&lt;/code&gt;来对结果进行美化。
+&lt;img src=&quot;http://7xqhnl.com1.z0.glb.clouddn.com/jshint%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA.png&quot; alt=&quot;iamge&quot;&gt;&lt;/p&gt;
+&lt;p&gt;另外提下在某些情况下我们要检查的 js 代码可能位于其他类型文件内（如 HTML、JSX 等），我们可以通过配置来实现。还有就是自定义一个 reporter 而不是使用 JSHint.reporter。这些都可以通过查找&lt;a href=&quot;https://github.com/spalger/gulp-jshint&quot;&gt;文档&lt;/a&gt;来了解具体的操作步骤。&lt;/p&gt;
+&lt;h3&gt;git-hooks&lt;/h3&gt;
+&lt;p&gt;以上我们就已经实现了使用 gulp 自动对项目文件进行规范检查，但是我们不想手动的去执行这个 gulp 任务，应该手动的话肯定就有人会偷懒了。所以我们考虑可以把 checkcode 任务集成到编译任务，因为前面都已经用到了 gulp 了，说明我们的项目肯定是会需要构建才能调试的，所以我们可以把 checkCode 任务集成进去。但是这样做有个缺点，我们的构建任务通常会是一个高频任务，但是 checkCode 任务肯定会是一个耗时的任务，而且项目稳定之后 checkCode 检查出的问题应该是很少的，所以这样做我们的时间浪费是不值得的，所以我们就得考虑把 checkCode 集成到一个低频的操作中去。这时就是我们的 git-hooks 登场了。&lt;/p&gt;
+&lt;p&gt;通常我们都会使用 svn/git 这类工具对我们的代码进行管理，除了我们常用的那些 pull/push 功能，我们还可以利用他们提供的 hooks 来在特定的操作中加入我们自己的操作，比如我们这里将要用到的&lt;code class=&quot;language-text&quot;&gt;pre-commit&lt;/code&gt;hook 就能在代码 commit 之前执行我们预设的脚本。因为现在比较流行 git，所以我们接下的方案将是基于 git 来做的。&lt;/p&gt;
+&lt;p&gt;我们通过&lt;code class=&quot;language-text&quot;&gt;git init&lt;/code&gt;或者&lt;code class=&quot;language-text&quot;&gt;git clone&lt;/code&gt;创建一个 git 项目时，会在项目顶层目录中生成一个&lt;code class=&quot;language-text&quot;&gt;.git&lt;/code&gt;文件夹（隐藏的），里面就包含了我们的一些 git 的配置信息，我们要了解的 hooks 就位于&lt;code class=&quot;language-text&quot;&gt;hooks&lt;/code&gt;目录下。文件夹内放置了很多 hook 的模板，不过这些&lt;code class=&quot;language-text&quot;&gt;.sample&lt;/code&gt;后缀的文件是不能识别的，想让他们执行只要去掉后缀即可。这里的提供的 hooks 只是客户端的 hook，在 server 端也有一些 hook，可以去&lt;a href=&quot;https://git-scm.com/docs/githooks&quot;&gt;这里&lt;/a&gt;查找全部 hook 的信息和用法。示例中的 hook 是用&lt;code class=&quot;language-text&quot;&gt;shell&lt;/code&gt;写的，但是他是支持&lt;code class=&quot;language-text&quot;&gt;Ruby&lt;/code&gt;或者&lt;code class=&quot;language-text&quot;&gt;Python&lt;/code&gt;来写的。
+&lt;img src=&quot;http://7xqhnl.com1.z0.glb.clouddn.com/git-hooks.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下面我参考以前同事的&lt;code class=&quot;language-text&quot;&gt;pre-commit&lt;/code&gt;的脚本，具体内容不再叙述。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/sh&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#执行gulp任务，并将结果输出到临时文件&lt;/span&gt;
+gulp checkCode &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tee&lt;/span&gt; check.log
+
+&lt;span class=&quot;token comment&quot;&gt;#检查gulp的check任务是否执行失败&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;warning&quot;&lt;/span&gt; check.log &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt; check.log
+&lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\033&quot;&gt;\033&lt;/span&gt;[31m Code check fail! Please try again! &lt;span class=&quot;token entity&quot; title=&quot;\033&quot;&gt;\033&lt;/span&gt;[0m&quot;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; -e &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token entity&quot; title=&quot;\033&quot;&gt;\033&lt;/span&gt;[32m Code check success! &lt;span class=&quot;token entity&quot; title=&quot;\033&quot;&gt;\033&lt;/span&gt;[0m&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#删除临时文件&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; check.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;至此，一套结合 git-hooks、gulp 和 JSHint 的代码检查方案就完成了。这种方案不一样会在你的项目中运用，但是了解其中运用的一些东西能帮助你拓宽下视野，对以后或许有帮助。最后，因本人水平有限，如果上文中出现一些错误，请直接指出，勿喷。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[window下几种以当前路径打开命令行的方式]]></title><description><![CDATA[此技巧仅用于 window 平台，osx 用户绕道。 方法一 最原始的方法，手动调出 cmd，然后通过命令切换到指定目录。 方法二 用资源管理器打开指定目录后，在资源管理器的地址栏里输入 cmd…]]></description><link>https://dingziqi.github.io/window下几种以当前路径打开命令行的方式/</link><guid isPermaLink="false">https://dingziqi.github.io/window下几种以当前路径打开命令行的方式/</guid><pubDate>Mon, 13 Jun 2016 12:01:05 GMT</pubDate><content:encoded>&lt;p&gt;此技巧仅用于 window 平台，osx 用户绕道。&lt;/p&gt;
 &lt;!--more--&gt;
 &lt;h3&gt;方法一&lt;/h3&gt;
 &lt;p&gt;最原始的方法，手动调出 cmd，然后通过&lt;code class=&quot;language-text&quot;&gt;cd&lt;/code&gt;命令切换到指定目录。&lt;/p&gt;
