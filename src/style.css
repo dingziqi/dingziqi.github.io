@@ -187,6 +187,11 @@ ol li {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
 
+article ul li,
+article ol li {
+  margin-left: var(--fontSize-1);
+}
+
 li > p {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
