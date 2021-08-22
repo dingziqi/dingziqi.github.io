@@ -1,0 +1,10 @@
+.tags {
+ margin-left: var(--spacing-6);
+}
+
+.tag {
+  font-size: var(--fontSize-1);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: #fbfbfb;
+  border-radius: 3px;
+}

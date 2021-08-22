@@ -6337,6 +6337,14 @@ gatsby-remark-smartypants@^4.7.0:
     retext-smartypants "^4.0.0"
     unist-util-visit "^2.0.3"
 
+gatsby-remark-table-of-contents@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.nlark.com/gatsby-remark-table-of-contents/download/gatsby-remark-table-of-contents-0.2.1.tgz#6c0f044557d5ab63e2002ea304a7f3e4906cc01c"
+  integrity sha1-bA8ERVfVq2PiAC6jBKfz5JBswBw=
+  dependencies:
+    js-yaml "^3.14.0"
+    mdast-util-toc "^5.1.0"
+
 gatsby-source-filesystem@^3.10.0:
   version "3.11.0"
   resolved "https://registry.nlark.com/gatsby-source-filesystem/download/gatsby-source-filesystem-3.11.0.tgz#b9d67f9a685e8542d1be0f0917a6223b31a787e4"
@@ -8302,7 +8310,7 @@ jpeg-js@^0.4.0:
   resolved "https://registry.nlark.com/js-tokens/download/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha1-GSA/tZmR35jjoocFDUZHzerzJJk=
 
-js-yaml@^3.13.1:
+js-yaml@^3.13.1, js-yaml@^3.14.0:
   version "3.14.1"
   resolved "https://registry.npm.taobao.org/js-yaml/download/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
   integrity sha1-2ugS/bOCX6MGYJqHFzg8UMNqBTc=

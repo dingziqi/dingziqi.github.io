@@ -1,6 +1,0 @@
-name: deploy
-uses: peaceiris/actions-gh-pages@v3.7.3
-with:
-    deploy_key: ${{ serects.ACTIONS_DEPLOY_KEY }}
-    publish_branch: main
-    publish_dir: ./public

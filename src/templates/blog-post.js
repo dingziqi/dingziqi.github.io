@@ -4,6 +4,7 @@ import { Disqus } from "gatsby-plugin-disqus"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import * as style from "./blog-post.module.css"
 
 const BlogPostTemplate = ({ uri, data, location }) => {
   const post = data.markdownRemark
@@ -23,7 +24,14 @@ const BlogPostTemplate = ({ uri, data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <p>
+            {post.frontmatter.date}
+            <label className={style.tags}>
+              {post.frontmatter.tags?.split(",").map(tag => (
+                <label className={style.tag}>{tag}</label>
+              ))}
+            </label>
+          </p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -92,6 +100,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MM-DD, YYYY")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

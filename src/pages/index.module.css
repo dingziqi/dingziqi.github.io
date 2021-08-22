@@ -1,0 +1,16 @@
+.tags {
+  margin-left: var(--spacing-3);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 var(--spacing-1);
+  color: var(--color-primary);
+  border-radius: 2px;
+  font-size: 10px;
+  background: #ddd;
+}
+
+.tag:not(:first-child) {
+  margin-left: var(--spacing-1);
+}

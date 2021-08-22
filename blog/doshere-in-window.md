@@ -3,7 +3,7 @@ id: doshere-in-window
 title: window下几种以当前路径打开命令行的方式
 categories: 1/0
 date: 2016-06-13 12:01:05
-tags:
+tags: 操作系统,小技巧
 ---
 
 此技巧仅用于 window 平台，osx 用户绕道。
