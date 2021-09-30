@@ -337,6 +337,10 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+iframe:not([src]) {
+  display: none;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
