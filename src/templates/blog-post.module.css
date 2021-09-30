@@ -8,3 +8,7 @@
   background: #fbfbfb;
   border-radius: 3px;
 }
+
+.tag:not(:first-child) {
+  margin-left: var(--spacing-1);
+}
